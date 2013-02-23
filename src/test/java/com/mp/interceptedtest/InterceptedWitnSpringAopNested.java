@@ -24,7 +24,7 @@ public class InterceptedWitnSpringAopNested {
     @Test
     public void testMethodToBeIntercepted() throws Exception {
         Integer result = interceptedWithSpringAopCglib.nested();
-        Assert.assertEquals(new Integer(4), result);
+        Assert.assertEquals(new Integer(3), result);  //If self-invoked nested(String) method was intercepted, It would be 4
     }
 
 

@@ -49,7 +49,7 @@ public class ProfilingAspect {
     }
 
     @Around("nestedPointcut()")
-    public int changeNotInterceptedToIntercepted(ProceedingJoinPoint joinPoint) {
+    public int addOneToOriginalResult(ProceedingJoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
         int result = 0;
         try{
@@ -63,7 +63,4 @@ public class ProfilingAspect {
         }
         return result;
     }
-
-
-
 }
